@@ -14,8 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from myportafolio.views import index, registro, agregar_portafolio, listar, detalles, PortafolioView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index.as_view(), name='index'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path('form_view/', form_view.as_view(), name='form_view'),
+    path('registrar/', registro, name='registrar'),
+    #path('registrar/', registro.as_view(), name='registrar'),
+    #path('agregar-portafolio/', agregar_portafolio.as_view(), name='agregar_portafolio'),
+    path('agregar-portafolio/', agregar_portafolio, name='agregar_portafolio'),
+    path('listar/', listar, name='listar'),
+    path('detalles-portf/', detalles.as_view(), name='detalles_portf'),
+    path('portafolio-view/', PortafolioView.as_view(), name='portafolio_view'),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

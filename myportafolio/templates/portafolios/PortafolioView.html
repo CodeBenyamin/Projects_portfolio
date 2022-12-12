@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portafolio lista</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../static/img/favicon.png" rel="icon">
+  <link href="../../static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../../static/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+        <!--Definimos el contenido-->
+
+    <div class="container">
+        {% load humanize %}
+        <br>
+        <h2>PORTAFOLIOS</h2>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for p in entity %}
+            <div class="col mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.titulo | title }}</h5>
+                        <a href="{}" class="btn btn-warning btn-block">Ver mas</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+            {% empty %}
+            <p>No hay portafolio aun</p>
+        </div>
+
+
+        {% endfor %}
+
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>
