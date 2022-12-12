@@ -83,14 +83,15 @@ WSGI_APPLICATION = 'ProyectoSilabuz04.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portafolio',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'eYOcVb%dXI!!nvQPle0YN59B',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'PASSWORD': 'O1tYIO8UQGFJPHW0tD6p',
+        'HOST': 'containers-us-west-155.railway.app',
+        'PORT': '5845'
     }
 }
 
